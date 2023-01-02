@@ -21,8 +21,11 @@ if ($pw != $pwc) {
     echo "<script>alert('패스워드를 확인해주세요.');location.href='join.php'</script>";
 }
 
+// pw 암호화
+$pws = md5($pw);
+
 // SELECT 조회, INSERT 삽입, UPDATE 변경, DELETE 삭제
-$sql = "INSERT INTO users (id, pw, name, address) VALUE ('$id', '$pw', '$name', '$addr')";
+$sql = "INSERT INTO users (id, pw, name, address) VALUE ('$id', '$pws', '$name', '$addr')";
 $result = mysqli_query($conn, $sql);
 if($result) {
     // 회원가입 후 로그인 처리

@@ -13,7 +13,10 @@ if ($pw != $pwc) {
     echo "<script>alert('패스워드를 확인해주세요.');location.href='user.php'</script>";
 }
 
-$sql = "UPDATE users SET `name`='$name', `address`='$addr', `pw`='$pw' WHERE `no`=$no";
+// pw 암호화
+$pws = md5($pw);
+
+$sql = "UPDATE users SET `name`='$name', `address`='$addr', `pw`='$pws' WHERE `no`=$no";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
