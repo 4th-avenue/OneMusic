@@ -65,7 +65,8 @@
                                             <li><a href="index.php">Home</a></li>
                                             <li><a href="albums-store.php">Albums</a></li>
                                             <li><a href="event.php">Events</a></li>
-                                            <li><a href="blog.php">News</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="bbs.php">BBS</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                             <li><a href="elements.php">Elements</a></li>
                                             <li><a href="login.php">Login</a></li>
@@ -90,6 +91,7 @@
                                     </li>
                                     <li><a href="event.php">Events</a></li>
                                     <li><a href="blog.php">Blog</a></li>
+                                    <li><a href="bbs.php">BBS</a></li>
                                     <li><a href="contact.php">Contact</a></li>
                                 </ul>
 
