@@ -1,11 +1,14 @@
 <?php
 // 회원가입
 require('../db/_conn.php');
-$id = $_POST['id'];
+
+// XSS 방지 처리
+$id = htmlspecialchars($_POST['id'], ENT_QUOTES, 'UTF-8');
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+$addr = htmlspecialchars($_POST['address'], ENT_QUOTES, 'UTF-8');
+
 $pw = $_POST['pw'];
 $pwc = $_POST['pwc'];
-$name = $_POST['name'];
-$addr = $_POST['address'];
 
 // id가 중복된 경우의 처리
 $sql = "SELECT * FROM users WHERE id='$id'";

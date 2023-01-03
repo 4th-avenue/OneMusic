@@ -1,11 +1,13 @@
 <?php
 require('../db/_conn.php');
 
+// XSS 방지 처리
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+$addr = htmlspecialchars($_POST['address'], ENT_QUOTES, 'UTF-8');
+
 $no = $_SESSION['no'];
-$name = $_POST['name'];
 $pw = $_POST['pw'];
 $pwc = $_POST['pwc'];
-$addr = $_POST['address'];
 $id = $_SESSION['id'];
 
 // 패스워드를 잘못 입력한 경우의 처리
