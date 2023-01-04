@@ -34,12 +34,12 @@ $result = mysqli_query($conn, $sql);
 
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input name="title" type="text" class="form-control" placeholder="title" value="<?=$mod['title']?>">
+                                    <input name="title" type="text" class="form-control" placeholder="title" maxlength="20" value="<?=$mod['title']?>">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input name="category" type="text" class="form-control" placeholder="category" value="<?=$mod['category']?>">
+                                    <input name="category" type="text" class="form-control" placeholder="category" maxlength="20" value="<?=$mod['category']?>">
                                 </div>
                             </div>
                             <div class="col-12">

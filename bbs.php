@@ -39,7 +39,16 @@ require('_bbs1page.php');
                                 <?php } else { ?>
                                     <img class="mr-5" style="height:50px;" src="bbs_img/noimage.png" alt="no post image">
                                 <?php } ?>
-                                <a href="bbsview.php?no=<?=$bbs['no']?>&current_page=<?=$current_page?>" class="pr-5 post-title"><?=$bbs['title'];?></a>
+                                <a href="bbsview.php?no=<?=$bbs['no']?>&current_page=<?=$current_page?>" class="pr-5 post-title">
+                                <?php
+                                // 20글자 이상이면 "..."으로 생략
+                                $limitedTitle = $bbs['title'];
+                                if(strlen($limitedTitle) >= 20) {
+                                    $limitedTitle = str_replace($bbs['title'], mb_substr($bbs['title'],0,20,"utf-8")."...", $bbs['title']);
+                                }
+                                echo $limitedTitle;
+                                ?>
+                                </a>
                                 <p class="post-author">By<a href="#"> <?=$bbs['name'];?></a></p>
                                 <p class="tags">in<a href="#"> <?=$bbs['category'];?></a></p>
                             <!-- 수정, 삭제 버튼 -->
